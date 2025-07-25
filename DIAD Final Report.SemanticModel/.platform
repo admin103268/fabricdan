@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "DIAD Final Report"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "62e0a1ff-7093-b832-4117-28d7d52782f7"
+  }
+}
