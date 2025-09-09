@@ -1,0 +1,56 @@
+table managed_products
+	lineageTag: 5846e1e8-62db-4dac-991c-8fb0a9770ebd
+	sourceLineageTag: [dbo].[managed_products]
+
+	column ProductID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 5c9b45c3-6fad-406e-8d17-79e9881df1d6
+		sourceLineageTag: ProductID
+		summarizeBy: count
+		sourceColumn: ProductID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductName
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: eaf303fb-8b03-4c4a-83e4-bc955b373573
+		sourceLineageTag: ProductName
+		summarizeBy: none
+		sourceColumn: ProductName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 46a3c464-1645-48b1-ba92-1ac7e498b31e
+		sourceLineageTag: Category
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column ListPrice
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 1cc27bdd-9b56-4507-b37b-57ced4690447
+		sourceLineageTag: ListPrice
+		summarizeBy: sum
+		sourceColumn: ListPrice
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition managed_products = entity
+		mode: directLake
+		source
+			entityName: managed_products
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

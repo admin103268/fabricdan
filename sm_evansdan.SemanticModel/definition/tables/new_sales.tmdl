@@ -1,0 +1,135 @@
+table new_sales
+	lineageTag: 3170b8f0-a8ff-4ee5-abf6-a1da8d82cb67
+	sourceLineageTag: [dbo].[new_sales]
+
+	column SalesOrderNumber
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 0e7ce5ea-07c6-4ee5-8b96-76a6ce57498f
+		sourceLineageTag: SalesOrderNumber
+		summarizeBy: none
+		sourceColumn: SalesOrderNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesOrderLineNumber
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: d6b61dcd-15e1-4b07-82b0-aa15984af14b
+		sourceLineageTag: SalesOrderLineNumber
+		summarizeBy: none
+		sourceColumn: SalesOrderLineNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrderDate
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 5b07bdd3-11ee-42dd-b9f7-ae3bb23d9a51
+		sourceLineageTag: OrderDate
+		summarizeBy: none
+		sourceColumn: OrderDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 25ed23ce-21f1-4beb-ae76-979496a174b1
+		sourceLineageTag: Year
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 7e85344e-a666-4ffb-8a9e-72f53c8388ec
+		sourceLineageTag: Month
+		summarizeBy: sum
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column FirstName
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: cab84e96-392d-4bbb-88b3-d94e692467e1
+		sourceLineageTag: FirstName
+		summarizeBy: none
+		sourceColumn: FirstName
+
+		annotation SummarizationSetBy = Automatic
+
+	column LastName
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 7d026b05-4faa-40a8-abfd-90fade802a38
+		sourceLineageTag: LastName
+		summarizeBy: none
+		sourceColumn: LastName
+
+		annotation SummarizationSetBy = Automatic
+
+	column EmailAddress
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 7cdbbb33-79e5-481a-b9d5-828f5f32b752
+		sourceLineageTag: EmailAddress
+		summarizeBy: none
+		sourceColumn: EmailAddress
+
+		annotation SummarizationSetBy = Automatic
+
+	column Item
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: bafcdc08-31b2-4072-9420-1540c572a46a
+		sourceLineageTag: Item
+		summarizeBy: none
+		sourceColumn: Item
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quantity
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 4bc488be-e63e-4a83-887b-5942b7dee1fa
+		sourceLineageTag: Quantity
+		summarizeBy: none
+		sourceColumn: Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column UnitPrice
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 9922f9f8-fda9-49ea-adf3-97a170a3aed5
+		sourceLineageTag: UnitPrice
+		summarizeBy: none
+		sourceColumn: UnitPrice
+
+		annotation SummarizationSetBy = Automatic
+
+	column TaxAmount
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: f2fba670-351c-4f38-bd60-14ec8feb3361
+		sourceLineageTag: TaxAmount
+		summarizeBy: none
+		sourceColumn: TaxAmount
+
+		annotation SummarizationSetBy = Automatic
+
+	partition new_sales = entity
+		mode: directLake
+		source
+			entityName: new_sales
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+
